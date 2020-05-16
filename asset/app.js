@@ -10,8 +10,8 @@ $(document).ready(function () {
     var entityId = "";
     $.ajax({
       type: "GET",
-      // url: `https://developers.zomato.com/api/v2.1/cities?q=${textInput}&apikey=${api_key}`,
-      url: cityURL + `q=` + textInput + api_key,
+      url: `https://developers.zomato.com/api/v2.1/cities?q=${textInput}&apikey=${api_key}`,
+      // url: cityURL + textInput + api_key,
       dataType: "json",
     }).then(function (response) {
       console.log(response);
