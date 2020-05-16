@@ -7,7 +7,7 @@ $(document).ready(function () {
     var cityURL = "https://developers.zomato.com/api/v2.1/cities?";
     var count = "&count=5";
     var textInput = $("#textInput").val();
-    var entityId = "";
+
     $.ajax({
       type: "GET",
       url: `https://developers.zomato.com/api/v2.1/cities?q=${textInput}&apikey=${api_key}`,
@@ -25,7 +25,7 @@ $(document).ready(function () {
       }).then(function (dresponse) {
         console.log(dresponse);
         $("#rec").empty();
-        var randNum = Math.floor(Math.random() * dresponse.restaurants.length);
+        var randNum = Math.floor(Math.random() * dresponse.restaurants[0].length);
         console.log(dresponse.restaurants[randNum].restaurant.url);
         // for (var i = 0; i < response.restaurants.length; i++) {
         //   var still = response.restaurants[i].restaurant.url;
